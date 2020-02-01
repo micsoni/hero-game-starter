@@ -7,17 +7,28 @@
   </head>
   <body>
     <!-- 👍 YOUR HTML HERE 👍 -->
+    <div>
+      <div>
+        <img id="mySuperHero" onclick="" src="images/superkitty.png" />
+      </div>
+      <div id="heroStats"></div>
+      <div id="youPickedIt"></div>
+      <div id="heroName">
+        <button onclick="chooseHeroName(hero)" type="default">
+          Choose my hero's name
+        </button>
+      </div>
 
-    <div id="functions">
-      <img id="inn" onclick="rest(hero)" src="images/kitty.png" />
-      <img
-        id="dagger"
-        onclick="pickUpItem(hero, dagger)"
-        src="images/dagger.png"
-      />
-      <img id="bag" onclick="equipWeapon(hero)" src="images/backpack.png" />
+      <div id="functions">
+        <img id="inn" onclick="rest(hero)" src="images/kitty.png" />
+        <img
+          id="dagger"
+          onclick="pickUpItem(hero, dagger)"
+          src="images/dagger.png"
+        />
+        <img id="bag" onclick="equipWeapon(hero)" src="images/backpack.png" />
+      </div>
     </div>
-
     <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
     <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 

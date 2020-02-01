@@ -3,11 +3,18 @@ img {
   margin-right: auto;
   max-width: 20%;
   max-height: 500px;
+  padding: 30px;
 }
 
 #functions {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  margin-bottom: 30px;
+}
+
+#youPickedIt {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 20px;
 }
