@@ -1,4 +1,6 @@
 // Write your JS here
+
+//global variables
 const hero = {
   name: "Bria",
   heroic: true,
@@ -9,6 +11,7 @@ const hero = {
 
 const dagger = { type: "dagger", damage: 2 };
 
+//function rest
 function rest(person) {
   if (person.health !== 10) {
     person.health = 10;
@@ -18,6 +21,7 @@ function rest(person) {
   return person;
 }
 
+//function pick up item
 function pickUpItem(person, weapon) {
   document.getElementById("youPickedIt").innerHTML =
     "You have a " + weapon.type + " now!";
@@ -25,6 +29,7 @@ function pickUpItem(person, weapon) {
   return weapon;
 }
 
+//function equip weapon and update the stats
 function equipWeapon(person) {
   if (person.inventory.length !== 0) {
     person.weapon = person.inventory[0];
@@ -32,11 +37,14 @@ function equipWeapon(person) {
   }
 }
 
+// function to choose hero name, display it and update de name on stats
 function chooseHeroName(person) {
   var heroName = prompt("Please enter your hero name", "");
 
   if (heroName != null && heroName.length < 30) {
     person.name = heroName;
+    document.getElementById("superHeroName").innerText = "";
+    document.getElementById("superHeroName").innerText = heroName;
     displayStats(person);
   } else if (heroName != null && heroName.length > 30) {
     alert("Your name is too long, try again");
@@ -44,6 +52,7 @@ function chooseHeroName(person) {
   return heroName;
 }
 
+//function to display the stats
 function displayStats(person) {
   document.getElementById("heroStats").innerHTML = "";
   var characteristics = document.createElement("p");
@@ -55,6 +64,35 @@ function displayStats(person) {
       <li>Weapon damage: ${person.weapon.damage}</li>
     </ul>`;
   document.getElementById("heroStats").appendChild(characteristics);
+}
+
+//function to see your enemy
+function seeEnemy() {
+  document.getElementById("seeEnemy").innerHTML = "";
+  var enemy = document.createElement("div");
+  enemy.innerHTML = `
+  <div id="myEnemy">
+    <img id ="ArchEnemy" onmouseover="fightAnEnemy()" onclick="deleteEnemy()" src="images/cucumber.png" /> 
+  <h2> The Cucumber</h2>
+  </div>`;
+  document.getElementById("seeEnemy").appendChild(enemy);
+  return enemy;
+}
+
+//Function to fight an enemy
+function fightAnEnemy() {
+  var cucumber = document.getElementById("ArchEnemy");
+  cucumber.style.width = "15%";
+  cucumber.onmouseover = function() {
+    cucumber.style.width = "10%";
+  };
+  cucumber.onmouseover = function() {
+    cucumber.style.width = "8%";
+  };
+}
+
+function deleteEnemy() {
+  document.getElementById("myEnemy").remove();
 }
 
 displayStats(hero);

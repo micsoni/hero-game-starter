@@ -7,7 +7,8 @@
   </head>
   <body>
     <!-- 👍 YOUR HTML HERE 👍 -->
-    <div>
+    <main>
+      <h1 id="superHeroName"></h1>
       <div>
         <img id="mySuperHero" onclick="" src="images/superkitty.png" />
       </div>
@@ -28,7 +29,12 @@
         />
         <img id="bag" onclick="equipWeapon(hero)" src="images/backpack.png" />
       </div>
-    </div>
+      <div id="seeEnemy">
+        <button onclick="seeEnemy()" type="default">
+          Click to see your enemy
+        </button>
+      </div>
+    </main>
     <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
     <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 

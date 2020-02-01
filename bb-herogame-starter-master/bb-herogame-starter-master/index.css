@@ -1,3 +1,19 @@
+body {
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  background: #32a893;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+main {
+  background: white;
+  width: 80%;
+  margin: 20 auto;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 img {
   margin-left: auto;
   margin-right: auto;
@@ -17,4 +33,23 @@ img {
   flex-flow: row wrap;
   justify-content: space-around;
   margin: 20px;
+}
+
+button {
+  padding: 12px;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  background-color: black;
+  border: solid 1px transparent;
+  border-radius: 5px;
+}
+
+#superHeroName {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 22px;
+}
+
+#seeEnemy {
+  text-align: right;
 }
