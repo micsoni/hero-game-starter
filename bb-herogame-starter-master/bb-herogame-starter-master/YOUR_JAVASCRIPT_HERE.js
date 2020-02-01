@@ -39,7 +39,7 @@ function equipWeapon(person) {
 
 // function to choose hero name, display it and update de name on stats
 function chooseHeroName(person) {
-  var heroName = prompt("Please enter your hero name", "");
+  const heroName = prompt("Please enter your hero name", "");
 
   if (heroName != null && heroName.length < 30) {
     person.name = heroName;
@@ -55,7 +55,7 @@ function chooseHeroName(person) {
 //function to display the stats
 function displayStats(person) {
   document.getElementById("heroStats").innerHTML = "";
-  var characteristics = document.createElement("p");
+  const characteristics = document.createElement("p");
   characteristics.innerHTML = `
     <ul>
       <li>Name: ${person.name}</li>
@@ -69,11 +69,11 @@ function displayStats(person) {
 //function to see your enemy
 function seeEnemy() {
   document.getElementById("seeEnemy").innerHTML = "";
-  var enemy = document.createElement("div");
+  const enemy = document.createElement("div");
   enemy.innerHTML = `
-  <div id="myEnemy">
-    <img id ="ArchEnemy" onmouseover="fightAnEnemy()" onclick="deleteEnemy()" src="images/cucumber.png" /> 
-  <h2> The Cucumber</h2>
+  <div>
+    <img id="ArchEnemy" onclick="fightAnEnemy()"  src="images/cucumber.png" /> 
+  <h2 id="myEnemy" onclick="deleteEnemy()"> The Cucumber</h2>
   </div>`;
   document.getElementById("seeEnemy").appendChild(enemy);
   return enemy;
@@ -81,18 +81,17 @@ function seeEnemy() {
 
 //Function to fight an enemy
 function fightAnEnemy() {
-  var cucumber = document.getElementById("ArchEnemy");
-  cucumber.style.width = "15%";
-  cucumber.onmouseover = function() {
-    cucumber.style.width = "10%";
-  };
-  cucumber.onmouseover = function() {
-    cucumber.style.width = "8%";
+  const cucumber = document.getElementById("ArchEnemy");
+  cucumber.src = "images/explosion.png";
+  cucumber.onclick = function() {
+    cucumber.src = "images/cat.png";
   };
 }
 
+//Function to delete enemy
 function deleteEnemy() {
-  document.getElementById("myEnemy").remove();
+  const holeDiv = document.getElementById("myEnemy");
+  holeDiv.innerHTML = "";
 }
 
 displayStats(hero);
